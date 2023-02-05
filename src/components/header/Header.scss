@@ -1,0 +1,36 @@
+@use "../../sass/index" as *;
+
+.header {
+    @include flex(center, flex-start);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $headerHeight;
+    padding: 0 4%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+
+    &+* {
+        margin-top: $headerHeight;
+    }
+
+    .logo {
+        text-transform: uppercase;
+        font-weight: 700;
+
+        @include tablet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    @include tablet(min) {
+        svg {
+            display: none;
+        }
+    }
+}

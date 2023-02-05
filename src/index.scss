@@ -1,0 +1,87 @@
+@use "./sass/index" as *;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-raleway;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 44px;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+span {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+a {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+img {
+    max-width: 100%
+}
+
+.main {
+    position: relative;
+    @include flex();
+    height: calc(100vh - $headerHeight);
+    background-color: $clr-gray;
+
+    >*:nth-child(2) {
+        flex-grow: 1;
+    }
+}
+
+.btn {
+    display: block;
+    min-width: 100px;
+    padding: 5px;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
+}
+
+.btn-black {
+    color: #fff;
+    background-color: #333;
+}
+
+.btn-white {
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #333;
+}

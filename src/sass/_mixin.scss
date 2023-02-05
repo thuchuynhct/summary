@@ -1,0 +1,32 @@
+$tablet : 900px;
+
+@mixin flex($items: false, $content: false, $gap: false, $wrap: false, $dir: false) {
+    display: flex;
+
+    @if $items !=false {
+        align-items: $items;
+    }
+
+    @if $content !=false {
+        justify-content: $content;
+    }
+
+    @if $gap !=false {
+        gap: $gap;
+    }
+
+    @if $wrap !=false {
+        flex-wrap: $wrap;
+    }
+
+    @if $dir !=false {
+        flex-direction: $dir;
+    }
+}
+
+
+@mixin tablet($size: max) {
+    @media screen and (#{$size}-width:$tablet) {
+        @content;
+    }
+}
