@@ -7,7 +7,7 @@ const ProjectList = ({ list }: { list: ProjectType[] }) => {
         <div className='project-list'>
             <div className="list">
                 {
-                    list.map(project => (
+                    list.sort((a, b) => b.id - a.id).map(project => (
                         <Project key={project.id} item={project} />
                     ))
                 }
